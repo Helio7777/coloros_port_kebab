@@ -1,14 +1,28 @@
-name: Build Kernel
-on:
+name: ColorOS Port Kebab
 
-  workflow_dispatch:
+on:
+  push:
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-    - name: test
-      run: |
-       pwd
-         ls -la
-         sudo ./setup.sh
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Update and upgrade apt packages
+        run: |
+          sudo apt update
+          sudo apt upgrade -y
+
+      - name: Install git
+        run: sudo apt install git -y
+
+      - name: Install dependencies
+        run: sudo ./setup.sh
+        working-directory: .
+
+      - name: Start porting
+        run: //sudo ./port.sh <底包路径> <移植包路径>
+        working-directory: .
