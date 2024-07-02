@@ -14,7 +14,7 @@ jobs:
       - name: Update and upgrade apt packages
         run: |
           sudo apt update
-          sudo apt upgrade -y
+          #sudo apt upgrade -y
 
       - name: Install dependencies
         run: sudo ./setup.sh
@@ -22,10 +22,10 @@ jobs:
 
       - name: download
         run: |
-          wget -O 12.zip https://gauss-componentotacostmanual-cn.allawnfs.com/remove-13ad7026702a88d8eae5079c043d059f/component-ota/24/06/07/33cecee1c1fb4a8ea7d73e8161ffde4e.zip
-          wget -O 9R.zip https://gauss-componentotacostmanual-cn.allawnfs.com/remove-ee17db2984ef8544006ee50bb25e3742/component-ota/24/06/21/e4b3a351a4c64209bcfd8bc7f14cd9a9.zip
+          #wget -O 12.zip https://gauss-componentotacostmanual-cn.allawnfs.com/remove-13ad7026702a88d8eae5079c043d059f/component-ota/24/06/07/33cecee1c1fb4a8ea7d73e8161ffde4e.zip
+          #wget -O 9R.zip https://gauss-componentotacostmanual-cn.allawnfs.com/remove-ee17db2984ef8544006ee50bb25e3742/component-ota/24/06/21/e4b3a351a4c64209bcfd8bc7f14cd9a9.zip
         working-directory: .
 
       - name: Start porting
-        run: sudo ./port.sh 9R.zip 12.zip
+        run: sudo ./port.sh https://gauss-componentotacostmanual-cn.allawnfs.com/remove-ee17db2984ef8544006ee50bb25e3742/component-ota/24/06/21/e4b3a351a4c64209bcfd8bc7f14cd9a9.zip https://gauss-componentotacostmanual-cn.allawnfs.com/remove-13ad7026702a88d8eae5079c043d059f/component-ota/24/06/07/33cecee1c1fb4a8ea7d73e8161ffde4e.zip
         working-directory: .
