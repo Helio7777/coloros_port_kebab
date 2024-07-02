@@ -5,13 +5,12 @@ jobs:
   Build:
     runs-on: ubuntu-latest
     steps:
-     - name:download
-       run:
+      - name: download
+        run: |
           wget -O 12.zip https://gauss-componentotacostmanual-cn.allawnfs.com/remove-13ad7026702a88d8eae5079c043d059f/component-ota/24/06/07/33cecee1c1fb4a8ea7d73e8161ffde4e.zip
           wget -O 9R.zip https://gauss-componentotacostmanual-cn.allawnfs.com/remove-ee17db2984ef8544006ee50bb25e3742/component-ota/24/06/21/e4b3a351a4c64209bcfd8bc7f14cd9a9.zip
 
       - name: build
-       run:
-       sudo ./setup.sh
-       sudo ./port.sh  ./9r.zip ./12.zip
-      
+        run: |
+          sudo ./setup.sh
+          sudo ./port.sh ./9R.zip ./12.zip
