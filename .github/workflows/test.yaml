@@ -9,6 +9,4 @@ jobs:
     steps:
     - name: test
       run: |
-       ls
-       cd coloros_port_kebab
-       sudo ./setup.sh
+       pwd
