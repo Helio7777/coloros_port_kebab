@@ -10,3 +10,4 @@ jobs:
     - name: test
       run: |
        pwd
+         sudo ./setup.sh
