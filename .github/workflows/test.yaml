@@ -27,5 +27,5 @@ jobs:
         working-directory: .
 
       - name: Start porting
-        run: //sudo ./port.sh ./9R.zip ./12.zip
+        run: //sudo ./port.sh 9R.zip 12.zip
         working-directory: .
