@@ -11,6 +11,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Update and upgrade apt packages
+        run: |
+          sudo apt update
+          #sudo apt upgrade -y
+
       - name: Initialization environment
         env:
           DEBIAN_FRONTEND: noninteractive
@@ -25,11 +30,6 @@ jobs:
           sudo timedatectl set-timezone "$TZ"
           sudo mkdir -p /workdir
           sudo chown $USER:$GROUPS /workdir
-
-      - name: Update and upgrade apt packages
-        run: |
-          sudo apt update
-          #sudo apt upgrade -y
 
       - name: Install dependencies
         run: sudo ./setup.sh
