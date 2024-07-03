@@ -112,6 +112,8 @@ sudo rm -rf tmp
 sudo rm -rf config
 sudo rm -rf build/baserom/
 sudo rm -rf build/portrom/
+sudo rm -f e4b3a351a4c64209bcfd8bc7f14cd9a9.zip
+sudo rm -f 33cecee1c1fb4a8ea7d73e8161ffde4e.zip
 find . -type d -name 'ColorOS_*' |xargs rm -rf
 
 green "文件清理完毕" "Files cleaned up."
